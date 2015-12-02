@@ -1,0 +1,17 @@
+'
+'   Be sure to have first visited
+'   http://localhost/about_iMacro/create_sqlite_db.html
+'
+
+SET !DATASOURCE 030_loop.csv
+SET !DATASOURCE_COLUMNS 2
+SET !LOOP 2
+SET !DATASOURCE_LINE {{!LOOP}}
+
+
+URL GOTO=http://localhost/about_iMacro/insert_sqlite_record.html
+
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=NAME:foo CONTENT={{!COL1}}
+TAG POS=1 TYPE=INPUT:TEXT FORM=NAME:NoFormName ATTR=NAME:bar CONTENT={{!COL2}}
+
+TAG POS=1 TYPE=INPUT:SUBMIT FORM=NAME:NoFormName ATTR=*

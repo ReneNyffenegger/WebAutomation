@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Create a sqlite DB</title>
+</head>
+<body>
+
+<?php
+
+  if (is_file('the.db')) {
+    unlink('the.db');
+  }
+
+  $db = new PDO("sqlite:the.db"); 
+
+  $db -> exec('create table tab (foo text, bar text)');
+
+?>
+
+<a href='insert_sqlite_record.html'>Insert a record</a>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Inserting a record into SQLite</title>
+</head>
+<body>
+
+  <form method='post'>
+    <table>
+      <tr><td>Foo:</td><td><input name='foo'></td></tr>
+      <tr><td>Bar:</td><td><input name='bar'></td></tr>
+      <tr><td></td><td><input type='submit'> </td></tr>
+  </form>
+
+  <?php
+
+    $db = new PDO("sqlite:the.db"); 
+
+    if ($_POST['foo']) {
+      $stmt_h = $db -> prepare ('insert into tab values (:foo, :bar)');
+
+      $stmt_h -> bindParam(':foo', $_POST['foo']);
+      $stmt_h -> bindParam(':bar', $_POST['bar']);
+
+      $stmt_h -> execute();
+
+    }
+
+    $res = $db -> query('select * from tab');
+
+    foreach ($res as $row) {
+      print '<tr><td>' . $row['foo'] . '</td><td>' . $row['bar'] . '</td></tr>';
+    }
+
+    echo "<table>";
+
+
+    echo "</table>";
+     
+  ?>
+  
+  <a href='create_sqlite_db.html'>Create the db again</a>.
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+URL GOTO=http://localhost/about_iMacro/post_request.html
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:post_answer.html ATTR=NAME:foo CONTENT=This<SP>is<SP>foo
+TAG POS=1 TYPE=INPUT:TEXT FORM=ACTION:post_answer.html ATTR=NAME:bar CONTENT=This<SP>is<SP>bar
+TAG POS=1 TYPE=INPUT:FILE FORM=ACTION:post_answer.html ATTR=NAME:chosenFile CONTENT=C:\about\iMacro\macros\020_post_request.iim
+TAG POS=1 TYPE=BUTTON FORM=ACTION:post_answer.html ATTR=TXT:Go!

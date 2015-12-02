@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Post answer</title>
+</head>
+<body>
+
+  You entered foo = <b><?php echo $_POST['foo']; ?></b> and bar = <b><?php echo $_POST['bar']; ?></b>
+
+  <p>The content of <b><?php echo $_FILES['chosenFile']['name']; ?></b> is: <pre><code><?php echo file_get_contents($_FILES['chosenFile']['tmp_name']); ?></code></pre>
+
+
+</body>
+</html>
